@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Ajaib</title>
+    <style>
+        *{
+            margin: 1em;
+        }
+        .input1{
+            height: 250px;
+            width: 290px;
+            border: none;
+            background-color: #e5e5e5;
+            text-align: center;
+        }
+        .input2, .input3{
+            width: 290px;
+            background-color: #e5e5e5;
+            border: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+    
+        
+        <textarea cols="30" rows="10" class="input1" placeholder="WA Chat"></textarea><br>
+        <input type="text" class="input2" placeholder="Pesan Kirim">
+        <button class="kirim" onclick="getIsi()">kirim</button><br>
+
+        <input type="text"  class="input3"  placeholder="Pesan Kirim 2">
+        <button class="kirim" onclick="getIsi2()">kirim</button>
+    
+        
+    
+    <script>
+        const input1 = document.querySelector(".input1");
+        //console.log(".input1");
+        const input2 = document.querySelector(".input2");
+        //console.log(".input2");
+        const input3 = document.querySelector(".input3");
+        //console.log(".input3");
+        const kirim = document.querySelector(".kirim");
+        //console.log(".kirim");
+        let sender = document.querySelector(".input1");
+        //console.log(".input1");
+
+       function getIsi(){
+           sender.innerHTML = sender.innerHTML + "A : " + input2.value + "\n";  
+           input2.value = "";
+            
+        }
+    
+        function getIsi2(){
+            sender.innerHTML = sender.innerHTML + "B : " + input3.value + "\n";
+            input3.value = "";
+        }
+
+    
+
+    </script>
+</body>
+</html>

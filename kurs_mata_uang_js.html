@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplikasi Konversi Mata Uang</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		#dt{
+			width : 15px;
+			border:  0;
+		}
+		#border{
+			border: 0;
+			color:red;
+			
+		}
+		*{
+			margin: 50px;
+			
+		}
+		h4{
+			text-align: center;
+			color:black;
+		}
+		
+
+	</style>
+	<script>
+	function Konversi() {
+
+		var kalkulasi    = document.getElementById("kalkulasi").value;
+		var uang1     = document.getElementById("valas 1");
+		var uang1value= uang1.options[uang1.selectedIndex].value;
+		var uang1text = uang1.options[uang1.selectedIndex].text;
+
+		var uang2     = document.getElementById("valas 2");
+		var uang2value= uang2.options[uang2.selectedIndex].value;
+		var uang2text = uang2.options[uang2.selectedIndex].text;
+
+		var bantu  = 1;
+		var bantu1 = (bantu / uang1value);
+		var bantu2 = bantu1*uang2value;
+		var bantu3 = bantu2*kalkulasi;
+
+		document.getElementById("hasil").value = bantu3;
+	}
+</script>
+</head>
+<body>
+
+
+<center>
+	
+	<table border="1" style="width: 70%; height: 20%; border-color: rgb(245, 5, 5)" cellpadding="10">
+			<tr>
+				<td id="border"><h4>&nbsp;Mata Uang Asal</h4></td>
+				<td id="dt"></td>
+				<td id="border"><h4>Mata Uang Tujuan</h4></td>
+			</tr>
+
+		<tr>
+			<td id="border">
+					<select id="valas 1" class="form-control form-control-lg">
+						<option value=""></option>
+						<option value="15.888">€ Euro</option>
+						<option value="120">¥ Yen Jepan</option>
+						<option value="14.000">Rp Rupiah</option>
+						<option value="9.915">$ Dollar US</option>
+						<option value="18.646">£ Pondsterling</option>
+						<option value="13.472">$ Dollar Singapore</option>
+						<option value="874">RM Ringgit Malaysia</option>
+						<option value="3.592">ر.س Riyal Arab Saudi</option>
+					</select>
+			</td>
+			
+			
+			<td id="border">Tukar</td>
+			
+			<!--Buat Mengeluarkan Uang Tukar-->
+			<td id="border">
+					<select id="valas 2" class="form-control form-control-lg"> 
+						   <option value=""></option>
+                           <option value="15.888">€ Euro</option>
+						   <option value="120">¥ Yen Jepan</option>
+						   <option value="14.000">Rp Rupiah</option>
+                           <option value="9.915">$ Dollar US</option>
+                           <option value="18.646">£ Pondsterling</option>
+                           <option value="13.472">$ Dollar Singapore</option>
+                           <option value="874">RM Ringgit Malaysia</option>
+                           <option value="3.592">ر.س Riyal Arab Saudi</option>
+					</select> 
+			</td>
+		</tr>
+			
+			<tr>
+			<!--Buat Input Uang-->
+				<td id="border">
+					<input id="kalkulasi" type="text"  class="form-control">
+				</td>
+			
+			
+			<td id="dt">Hasil</td>
+
+			<!--Buat Hasil Uang-->
+				<td id="border">
+					<input type="text" id="hasil" name="" readonly="" style="background-color: rgba(236,236,236,255);" width="100%" height="100%" class="form-control">
+				</td>
+			</tr>
+			
+			<!--Buat Button Hitung Uang-->
+			<tr>
+				<td colspan="6" id="border">
+					<button type="submit" class="btn btn-primary" onclick="Konversi();" style="height: 100%; width: 20%">Hitung</button>
+				</td>
+			</tr>
+
+		</table>
+</center>
+
+
+
+</body>
+</html>
